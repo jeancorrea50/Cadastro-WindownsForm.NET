@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TutorialModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Funcionario">
+          <Key>
+            <PropertyRef Name="FuncionarioId" />
+          </Key>
+          <Property Name="FuncionarioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FuncionarioNome" Type="varchar" MaxLength="50" />
+          <Property Name="FuncionarioIdade" Type="int" />
+          <Property Name="FuncionarioFuncao" Type="varchar" MaxLength="50" />
+          <Property Name="FuncionarioSalario" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="FuncionarioCidade" Type="varchar" MaxLength="50" />
+          <Property Name="FuncionarioEndereco" Type="varchar" MaxLength="50" />
+          <Property Name="FuncionarioBairro" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="TutorialModelStoreContainer">
+          <EntitySet Name="Funcionario" EntityType="Self.Funcionario" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TutorialModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Funcionario">
+          <Key>
+            <PropertyRef Name="FuncionarioId" />
+          </Key>
+          <Property Name="FuncionarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FuncionarioNome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FuncionarioIdade" Type="Int32" />
+          <Property Name="FuncionarioFuncao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FuncionarioSalario" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="FuncionarioCidade" Type="String" Unicode="false" FixedLength="false" MaxLength="50" />
+          <Property Name="FuncionarioEndereco" Type="String" Unicode="false" FixedLength="false" MaxLength="50" />
+          <Property Name="FuncionarioBairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="TutorialEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Funcionarios" EntityType="Self.Funcionario" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TutorialModelStoreContainer" CdmEntityContainer="TutorialEntities">
+          <EntitySetMapping Name="Funcionarios">
+            <EntityTypeMapping TypeName="TutorialModel.Funcionario">
+              <MappingFragment StoreEntitySet="Funcionario">
+                <ScalarProperty Name="FuncionarioBairro" ColumnName="FuncionarioBairro" />
+                <ScalarProperty Name="FuncionarioEndereco" ColumnName="FuncionarioEndereco" />
+                <ScalarProperty Name="FuncionarioCidade" ColumnName="FuncionarioCidade" />
+                <ScalarProperty Name="FuncionarioId" ColumnName="FuncionarioId" />
+                <ScalarProperty Name="FuncionarioNome" ColumnName="FuncionarioNome" />
+                <ScalarProperty Name="FuncionarioIdade" ColumnName="FuncionarioIdade" />
+                <ScalarProperty Name="FuncionarioFuncao" ColumnName="FuncionarioFuncao" />
+                <ScalarProperty Name="FuncionarioSalario" ColumnName="FuncionarioSalario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
